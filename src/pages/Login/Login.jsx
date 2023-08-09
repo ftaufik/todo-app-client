@@ -15,7 +15,7 @@ export default function Login() {
 
         try {
             const res = await axios.post(
-                "http://localhost:8000/api/v1/user/login",{
+                "https://todo-app-server-blue.vercel.app/api/v1/user/login",{
                 password: password
             });
             const data = res.data.data;

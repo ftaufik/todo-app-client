@@ -6,25 +6,25 @@ const initialState = {
 };
 
 export const getTodos = createAsyncThunk('todos/getTodos', async (userId) => {
-    const response = await axios.get(`http://localhost:8000/api/v1/todo/${userId}`);
+    const response = await axios.get(`https://todo-app-server-blue.vercel.app/api/v1/todo/${userId}`);
 
     return response.data.data
 })
 
 export const toggleComplete = createAsyncThunk('todos/completeTodos', async (todoId) => {
-    const response = await axios.put(`http://localhost:8000/api/v1/todo/complete/${todoId}`);
+    const response = await axios.put(`https://todo-app-server-blue.vercel.app/api/v1/todo/complete/${todoId}`);
 
     return response.data.data
 })
 
 export const deleteTodos = createAsyncThunk('todos/deleteTodos', async (todoId) => {
-    const response = await axios.delete(`http://localhost:8000/api/v1/todo/delete/${todoId}`);
+    const response = await axios.delete(`https://todo-app-server-blue.vercel.app/api/v1/todo/delete/${todoId}`);
 
     return response.data.data
 })
 
 export const editTodos = createAsyncThunk('todos/editTodos', async (props) => {
-    const response = await axios.put(`http://localhost:8000/api/v1/todo/edit/${props.id}`,{
+    const response = await axios.put(`https://todo-app-server-blue.vercel.app/api/v1/todo/edit/${props.id}`,{
       todo: props.todo
     });
 
@@ -32,7 +32,7 @@ export const editTodos = createAsyncThunk('todos/editTodos', async (props) => {
 })
 
 export const addTodos = createAsyncThunk('todos/addTodos', async (props) => {
-    const response = await axios.post(`http://localhost:8000/api/v1/todo/create/${props.id}`,{
+    const response = await axios.post(`https://todo-app-server-blue.vercel.app/api/v1/todo/create/${props.id}`,{
       todo: props.todo
     });
 
